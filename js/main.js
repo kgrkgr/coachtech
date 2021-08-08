@@ -1,19 +1,15 @@
-const items = [
-  { name: "水", price: 100, },
-  { name: "リンゴジュース", price: 130, },
-  { name: "コーヒー", price: 150, },
-  { name: "モンスター", price: 200, },
-  { name: "レッドブル（大）", price: 250, },
-];
-
-const buy = function (pay, itemName) {
-  const findItem = items.find((i) => i.name == itemName);
-  if (!findItem) return console.log("その商品は存在しません。");
-  if (pay < findItem.price) return console.log("お金が足りません。");
-  const change = pay - findItem.price;
-  console.log(findItem.name + "をお買い上げありがとうございます");
-  if (change <= 0) {
-    return console.log("おつりはありません。");
+function advice(name,test) {
+  if (test >= 70 && test <= 100) {
+    return '${name}君よくできました';
+  } else if (test >= 30 && test < 70) {
+    return '${name}君普通です';
+  } else if (test < 30 && test >= 0) {
+    return '${name}君もう少し頑張りましょう';
+  } else {
+    return '正しい数字を入力してください';
   }
-  console.log("おつりは" + change + "円になります。");
 }
+
+console.log(advice("A", 80));
+console.log(advice("B", 15));
+console.log(advice("C", 50));
